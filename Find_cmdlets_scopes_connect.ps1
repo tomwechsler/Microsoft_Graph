@@ -23,7 +23,7 @@ Get-Help Get-MgUser -Detailed
 
 Get-Help Get-MgUser -Full
 
-Get-Help Get-MgUser –ShowWindow
+Get-Help Get-MgUser -ShowWindow
 
 #Connect to Microsoft 365 using Scopes
 #Scopes to Manage Users and Groups with Full Read Write Access
