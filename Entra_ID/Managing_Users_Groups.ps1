@@ -25,7 +25,7 @@ $scopes = @(
 Connect-MgGraph -Scopes $scopes
 
 #Check the permissions
-Get-MgContext | select -ExpandProperty scopes
+Get-MgContext | Select-Object -ExpandProperty scopes
 
 #Retrieving User Accounts:
 
@@ -33,41 +33,41 @@ Get-MgContext | select -ExpandProperty scopes
 Get-MgUser | Format-List ID, DisplayName, Mail, UserPrincipalName
 
 #Retrieve Specific User by ID
-Get-MgUser -UserId 'f9c720a4-c7f1-4b00-b419-ff2c806e0ddf' | Format-List ID, DisplayName, Mail, UserPrincipalName
+Get-MgUser -UserId 'e08d23a7-b6db-4d19-919d-baffc82949ef' | Format-List ID, DisplayName, Mail, UserPrincipalName
 
 #Create a New User Account
 $password = @{ Password= 'P@ssw0rd4625???' }
-New-MgUser -DisplayName 'Timo Jones' -PasswordProfile $password -AccountEnabled -MailNickName 'timojones' -UserPrincipalName 'timo.jones@tomrocks.ch'
+New-MgUser -DisplayName 'Timo Jones' -PasswordProfile $password -AccountEnabled -MailNickName 'timojones' -UserPrincipalName 'timo.jones@tomsazure.ch'
 
 #Updating User Accounts
 
 #Update User Using ID
-Update-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df' -DisplayName 'Timo R Jones'
+Update-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2' -DisplayName 'Timo R Jones'
 
 #Did it work
-Get-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df'
+Get-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2'
 
 #Retrieve User Using Filtering, Then Update
-$user = Get-MgUser -ConsistencyLevel eventual -Filter "startsWith(UserPrincipalName, 'timo.jones@tomrocks.ch')"
+$user = Get-MgUser -ConsistencyLevel eventual -Filter "startsWith(UserPrincipalName, 'timo.jones@tomsazure.ch')"
 Update-MgUser -UserId $user.Id -DisplayName 'Timo Jones'
 
 #Did it work
-Get-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df'
+Get-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2'
 
 #Deleting User Accounts
 
 #Remove User by ID
-Remove-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df'
+Remove-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2'
 
 #Remove User by ID with Confirmation
-Remove-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df' -Confirm
+Remove-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2' -Confirm
 
 #Retrieve User Using Filtering, Then Delete
-$user = Get-MgUser -ConsistencyLevel eventual -Filter "startsWith(UserPrincipalName, 'timo.jones@tomrocks.ch')"
+$user = Get-MgUser -ConsistencyLevel eventual -Filter "startsWith(UserPrincipalName, 'timo.jones@tomsazure.ch')"
 Remove-MgUser -UserId $user.Id -Confirm
 
 #Did it work
-Get-MgUser -UserId 'e0004b8a-b13f-4355-a291-4a7fef7d96df'
+Get-MgUser -UserId '8ffd0594-0b5f-4355-ba5f-50f7b1b614a2'
 
 #Connect for Group Management:
 
