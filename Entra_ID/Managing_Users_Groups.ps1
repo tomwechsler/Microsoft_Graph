@@ -4,8 +4,8 @@ Clear-Host
 #If needed
 Import-Module Microsoft.Graph
 
-#Set the API to the 'beta' endpoint
-Select-MgProfile -Name "beta"
+#Install into the Current User Scope
+Install-Module Microsoft.Graph -Scope CurrentUser -AllowClobber -Verbose -Force
 
 #Connect for User Management:
 
