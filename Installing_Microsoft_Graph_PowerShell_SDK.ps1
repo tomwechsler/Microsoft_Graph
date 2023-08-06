@@ -1,6 +1,3 @@
-#Install the NuGet Provider
-Install-PackageProvider -Name NuGet -Force
-
 #Set the Execution Policy (Windows)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
