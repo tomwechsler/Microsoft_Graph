@@ -1,24 +1,31 @@
 Set-Location C:\
 Clear-Host
 
+#Set the Execution Policy (Windows)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+#Install into the Current User Scope
+Install-Module Microsoft.Graph -Scope CurrentUser -AllowClobber -Verbose -Force
+
 #If needed
 Import-Module Microsoft.Graph
-
-#Set the API to the 'beta' endpoint
-Select-MgProfile -Name "beta"
-
-#We check the profile
-Get-MgProfile
 
 #Connection for Creating, Reading, Updating, and Deleting Mail
 $scopes = @("Mail.ReadWrite")
 Connect-MgGraph -Scopes $scopes
 
-#We search for my a UserID
+#We search for my UserID
 Get-MgUser
 
+Get-MgUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
+
+#We search for the permissions
+Find-MgGraphCommand -command Get-MgUserMailFolder | Select-Object -First 1 -ExpandProperty Permissions
+
+Find-MgGraphCommand -command Get-MgUserMailboxSetting | Select-Object -First 1 -ExpandProperty Permissions
+
 #An example
-$User = Get-MgUser -UserId "03462391-f62e-4fcb-b6ca-e6e74a9c4ba7"
+$User = Get-MgUser -UserId "b41b6fbd-8da5-4e68-a2f3-2288d682f1f0"
 $mailfolders = Get-MgUserMailFolder -UserId $User.Id -All
 $mailfolders
 
@@ -31,7 +38,7 @@ $scopes = @("Calendars.ReadWrite")
 Connect-MgGraph -Scopes $scopes
 
 #An example
-$User = Get-MgUser -UserId "03462391-f62e-4fcb-b6ca-e6e74a9c4ba7"
+$User = Get-MgUser -UserId "b41b6fbd-8da5-4e68-a2f3-2288d682f1f0"
 $calendar = Get-MgUserCalendar -UserId $User.Id -All
 $calendar
 
