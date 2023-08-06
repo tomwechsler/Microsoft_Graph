@@ -86,7 +86,7 @@ $scopes = @(
 Connect-MgGraph -Scopes $scopes
 
 #Check the permissions
-Get-MgContext | select -ExpandProperty scopes
+Get-MgContext | Select-Object -ExpandProperty scopes
 
 #Retrieving Groups:
 

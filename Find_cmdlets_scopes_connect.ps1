@@ -25,16 +25,6 @@ Get-Help Get-MgUser -Full
 
 Get-Help Get-MgUser –ShowWindow
 
-#Set the API Version
-#View the current API endpoint version
-Get-MgProfile
-
-#Set the API to the 'beta' endpoint
-Select-MgProfile -Name "beta"
-
-#Set the API to the 'v1.0' endpoint
-Select-MgProfile -Name "v1.0"
-
 #Connect to Microsoft 365 using Scopes
 #Scopes to Manage Users and Groups with Full Read Write Access
 $scopes = @(
@@ -74,6 +64,11 @@ Find-MgGraphPermission user -PermissionType Delegated
 
 #eDiscovery
 Find-MgGraphPermission ediscovery -PermissionType Delegated
+
+#We search for the permissions
+Find-MgGraphCommand -Command Get-MgUserMailFolder | Select-Object -First 1 -ExpandProperty Permissions
+
+Find-MgGraphCommand -Command Get-MgUserMailboxSetting | Select-Object -First 1 -ExpandProperty Permissions
 
 #Connect Using the Standard Command and Scopes
 $scopes = @("User.ReadWrite.All"
