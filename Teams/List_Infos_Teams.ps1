@@ -24,7 +24,7 @@ $scopes = @(
 Connect-MgGraph -Scopes $scopes
 
 #List the groups
-Get-MgGroup | Format-List Id, DisplayName, Description, GroupTypes
+$group = Get-MgGroup | Format-List Id, DisplayName, Description, GroupTypes
 
 #Retrieve Teams by ID
 $team = Get-MgTeam -TeamId $group.Id
