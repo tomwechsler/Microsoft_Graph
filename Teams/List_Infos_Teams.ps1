@@ -41,3 +41,14 @@ $team | Select-Object *
 $team = Get-MgTeam -TeamId $group.Id
 $members = Get-MgTeamMember -TeamId $team.Id
 $members | Select-Object DisplayName
+
+#Create a new team
+$params = @{ 
+    "Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')" 
+    DisplayName = 'Marketing' 
+    Description = 'Team for the marketing' 
+    } 
+    New-MgTeam -BodyParameter $params
+
+#Did it work?
+Get-MgTeam
