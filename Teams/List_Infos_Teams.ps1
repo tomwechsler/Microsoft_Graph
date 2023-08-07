@@ -52,3 +52,23 @@ $params = @{
 
 #Did it work?
 Get-MgTeam
+
+#Lets update some properties
+$params = @{ 
+    MemberSettings = @{ 
+    AllowCreateUpdateChannels = "true" #<TrueOrFalse> 
+    } 
+    MessagingSettings = @{ 
+    AllowUserEditMessages = "true" #<TrueOrFalse> 
+    AllowUserDeleteMessages = "false" #<TrueOrFalse> 
+    } 
+    FunSettings = @{ 
+    AllowGiphy = "true" #<TrueOrFalse> 
+    GiphyContentRating = "moderate" #<ModerateOrStrict> 
+    } 
+    } 
+
+ Update-MgTeam -TeamId 97d4ea74-1b57-4457-b172-182d7a5d5aa5 -BodyParameter $params
+
+#Did it work?
+Get-MgTeam -TeamId 97d4ea74-1b57-4457-b172-182d7a5d5aa5 | Select-Object -Property FunSettings -ExpandProperty FunSettings
