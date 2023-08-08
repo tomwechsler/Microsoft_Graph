@@ -91,7 +91,7 @@ Get-MgContext | Select-Object -ExpandProperty scopes
 #Retrieving Groups:
 
 #Retrieve All Groups
-Get-MgGroup| Format-List ID, DisplayName, Description, GroupTypes
+Get-MgGroup | Format-List ID, DisplayName, Description, GroupTypes
 
 #Retrieve Specific Group by ID
 Get-MgGroup -GroupId '12eda8b0-695b-4f57-a7b3-245b2a6552c9' | Format-List ID, DisplayName, Description, GroupTypes
