@@ -68,7 +68,7 @@ $params = @{
     } 
     } 
 
- Update-MgTeam -TeamId 97d4ea74-1b57-4457-b172-182d7a5d5aa5 -BodyParameter $params
+ Update-MgTeam -TeamId 03f3cacb-4d0a-4102-942f-67d2c5b80445 -BodyParameter $params
 
 #Did it work?
-Get-MgTeam -TeamId 97d4ea74-1b57-4457-b172-182d7a5d5aa5 | Select-Object -Property FunSettings -ExpandProperty FunSettings
+Get-MgTeam -TeamId 03f3cacb-4d0a-4102-942f-67d2c5b80445 | Select-Object -Property FunSettings -ExpandProperty FunSettings
