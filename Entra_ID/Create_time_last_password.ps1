@@ -1,6 +1,9 @@
 #Install Microsoft Graph Module
 Install-Module Microsoft.Graph -AllowClobber -Force
 
+#Import Microsoft Graph Module if needed
+Import-Module Microsoft.Graph
+
 #Time range
 $date = (Get-Date).AddDays(-60)
 
