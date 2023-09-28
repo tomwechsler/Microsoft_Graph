@@ -44,13 +44,13 @@ Write-Output "Detected Apps:" $detectedApps
 #Get all device compliance policies
 $deviceCompliancePolicies = Get-MgDeviceManagementDeviceCompliancePolicy
 
-# Output device compliance policies
+#Output device compliance policies
 Write-Output "Device Compliance Policies:" $deviceCompliancePolicies
 
-# Get all IoT update statuses
+#Get all IoT update statuses
 $ioUpdateStatuses = Get-MgDeviceManagementIoUpdateStatus 
 
-# Output IoT update statuses
+#Output IoT update statuses
 Write-Output "IoT Update Statuses:" $ioUpdateStatuses
 
 #Get all managed devices
