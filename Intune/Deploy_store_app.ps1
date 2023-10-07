@@ -11,7 +11,7 @@ Clear-Host
 #Istall the module. (You need admin on the machine.)
 Install-Module Microsoft.Graph -AllowClobber -Verbose -Force
 
-#Connect to the graph (incl. necessary permissions)
+#Connect to the graph (incl. necessary permissions) DeviceManagementApps.ReadWrite.All, DeviceManagementApps.Read.All
 Connect-MgGraph 
 
 #We check the permissions
