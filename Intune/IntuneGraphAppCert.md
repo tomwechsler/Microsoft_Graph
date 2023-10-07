@@ -74,6 +74,8 @@ Connect-MgGraph -TenantId $TenantId -ClientId $AppId -Certificate $Cert
 (Get-MgContext).Scopes
 ```
 
+<img src="/Intune/Images/Example_7.png" alt="The permissions">
+
 ---
 ## *HAPPY CONNECTING!*
 ---
