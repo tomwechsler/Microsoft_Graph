@@ -27,7 +27,7 @@ Export-Certificate -Cert $cert -FilePath "C:\certs\$certName.cer"
 
 <img src="/Intune/Images/Example_3.png" alt="The ID's">
 
-4. Go to the API permissions and add the following permissions.
+4. Go to the API permissions and add the following permissions (These serve only as an example).
 
 <img src="/Intune/Images/Example_4.png" alt="The API permissions">
 
