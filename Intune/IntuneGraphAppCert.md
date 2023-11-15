@@ -69,7 +69,7 @@ $Cert = Get-ChildItem -Path 'Cert:\CurrentUser\My' | Where-Object { $_.Subject -
 Connect-MgGraph -TenantId $TenantId -ClientId $AppId -Certificate $Cert
 ```
 
-5. We check the permissions
+5. We check the permissions.
 ```
 (Get-MgContext).Scopes
 ```
