@@ -1,14 +1,27 @@
 #Set the Execution Policy (Windows)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-#Install into the Current User Scope
-Install-Module Microsoft.Graph -Scope CurrentUser
+#Installing the Module
 
-#Install into the All-User Scope
-Install-Module Microsoft.Graph -Scope AllUsers -Force -Verbose
+#Installing the Graph PowerShell module with no previous versions installed
+Install-module Microsoft.Graph
 
-#Verify the Installation
-Get-InstalledModule Microsoft.Graph
+#If upgrading from a preview modules, run install-module with AllowClobber and Force parameter to avoid command name conflicts
+Install-Module Microsoft.Graph -AllowClobber -Force -Verbose
 
-#Updating the Module
-Update-Module Microsoft.Graph
+#Updating from an earlier version of MS Graph PowerShell installed from PS Gallery
+Update-module Microsoft.Graph
+
+#Uninstalling the old preview version, before installing the new
+
+#Remove the main meta module
+Uninstall-Module Microsoft.Graph
+
+#Remove all the dependent modules
+Get-InstalledModule Microsoft.Graph.* | ForEach-Object { if($_.Name -ne "Microsoft.Graph.Authentication"){ Uninstall-Module $_.Name } }
+
+#Update the authentication module
+Install-Module Microsoft.Graph.Authentication -Repository PSGallery -force
+
+#Or uninstall the authentication module
+Uninstall-Module Microsoft.Graph.Authentication
