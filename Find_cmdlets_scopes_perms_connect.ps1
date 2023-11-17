@@ -78,4 +78,4 @@ $scopes = @("User.ReadWrite.All"
 Connect-MgGraph -Scopes $scopes
 
 #Connect Using an Azure App Registration
-Connect-MgGraph -ClientId <your ClientId> -TenantId <your TenantId> -CertificateThumbprint <your CertificateThumbprint>
+Connect-MgGraph -ClientId "your ClientId" -TenantId "your TenantId" -CertificateThumbprint "your CertificateThumbprint"
