@@ -25,3 +25,6 @@ Install-Module Microsoft.Graph.Authentication -Repository PSGallery -force
 
 #Or uninstall the authentication module
 Uninstall-Module Microsoft.Graph.Authentication
+
+#The Modules are installed in the user profile
+' "$env:USERPROFILE\Documents\PowerShell\Modules" or "C:\Users\admin\Documents\PowerShell\Modules" '
