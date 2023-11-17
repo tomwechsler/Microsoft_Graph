@@ -12,7 +12,7 @@ get-command *-mgaudit*
 $TenantID = "your Tenant ID"
 
 #Connect to the graph
-$Tenant = Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All"
+Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All"
 
 #Get ApplicationManagemnt logs
 Get-MgAuditLogDirectoryAudit -Filter "category eq 'ApplicationManagement'"
