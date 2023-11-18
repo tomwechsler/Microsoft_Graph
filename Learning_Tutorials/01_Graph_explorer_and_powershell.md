@@ -1,6 +1,6 @@
 # Get to know the Microsoft Graph PowerShell SDK better with the Graph Explorer.
 
-Before we get started, what exactly are we talking about? Working with the Microsoft Graph PowerShell SDK can be a bit of a challenge. Installing the PowerShell module may still work, but then the first challenges arise. For example, which authorizations/areas do I need to be able to complete the task? Delegated or application authorizations? Two questions that can very quickly (often negatively ;-) affect motivation.
+Before we get started, what exactly are we talking about? Working with the Microsoft Graph PowerShell SDK can be a bit of a challenge. Installing the PowerShell module may still work, but then the first challenges arise. For example, which authorizations/scopes do I need to be able to complete the task? Delegated or application authorizations? Two questions that can very quickly (often negatively ;-) affect motivation.
 
 In this tutorial we will take a closer look at the Graph Explorer. The Graph Explorer is a web application that allows you to interactively query the Microsoft Graph. The Graph Explorer is a great way to get to know the Microsoft Graph and the PowerShell SDK. In addition, the Graph Explorer is a great tool for troubleshooting and debugging.
 
@@ -13,15 +13,15 @@ In this tutorial we will take a closer look at the Graph Explorer. The Graph Exp
 ## Step by step
 
 So that you can test the Microsoft Graph PowerShell SDK without risk, I recommend that you set up a free Microsoft 365 Developer Tenant. As just mentioned, this is free of charge and no credit card is required.
-You can create a test environment using the following link:
+You can create a test environment using the following link:  
 https://developer.microsoft.com/en-us/microsoft-365/dev-program
 
 After you have created your test environment, you can install the Microsoft Graph PowerShell SDK. You can find the installation instructions here:  
 [Link to the PowerShell File](../Installing_Microsoft_Graph_PowerShell_SDK.ps1)
 
 After you have installed the Microsoft Graph PowerShell SDK, you can start the Graph Explorer. You can find the Graph Explorer here:
-aka.ms/ge
-or
+aka.ms/ge  
+or  
 https://developer.microsoft.com/en-us/graph/graph-explorer
 
 <img src="/Learning_Tutorials/Images/ge_1.png" alt="The Graph Explorer">
