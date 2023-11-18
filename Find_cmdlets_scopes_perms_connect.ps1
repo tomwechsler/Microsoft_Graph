@@ -56,11 +56,17 @@ $scopes = @("Mail.ReadWrite"
 #SharePoint Sites
 Find-MgGraphPermission sites -PermissionType Delegated
 
+Find-MgGraphPermission sites -PermissionType Application
+
 #Microsoft Teams
 Find-MgGraphPermission teams -PermissionType Delegated
 
+Find-MgGraphPermission teams -PermissionType Application
+
 #Users
 Find-MgGraphPermission user -PermissionType Delegated
+
+Find-MgGraphPermission user -PermissionType Application
 
 #eDiscovery
 Find-MgGraphPermission ediscovery -PermissionType Delegated
@@ -79,3 +85,6 @@ Connect-MgGraph -Scopes $scopes
 
 #Connect Using an Azure App Registration
 Connect-MgGraph -ClientId "your ClientId" -TenantId "your TenantId" -CertificateThumbprint "your CertificateThumbprint"
+
+#We check the permissions
+(Get-MgContext).Scopes
