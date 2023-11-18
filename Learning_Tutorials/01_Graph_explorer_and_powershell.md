@@ -49,7 +49,6 @@ https://developer.microsoft.com/en-us/graph/graph-explorer
 <img src="/Learning_Tutorials/Images/ge_6.png" alt="The permissions">
 
 > Note: Delegated Microsoft Graph permissions refer to permissions granted by a user to a application to access their Microsoft Graph data on their behalf. This means that the application acts on behalf of a logged-in user. However, the application can never access anything that the logged-in user could not access.
-
 On the other hand, application permissions are permissions granted to an application itself to access Microsoft Graph data without a user context¹. This means that the app accesses Microsoft Graph with its own identity without a logged-in user.  
 
 But now we come back to the actual topic. How can the Graph Explorer help us to get to know the Microsoft Graph PowerShell SDK better? Let's start with a simple example, listing the groups in our organization. Take a look at all the valuable information the Graph Explorer can provide us with (We can also see that we do not yet have the necessary authorizations.). We get information about the necessary permissions (always start with the fewest permissions - it doesn't always need all of them - as we'll see in a moment).
