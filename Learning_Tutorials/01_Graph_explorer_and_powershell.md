@@ -71,4 +71,8 @@ But now we come back to the actual topic. How can the Graph Explorer help us to 
 
 <img src="/Learning_Tutorials/Images/ge_10.png" alt="In Visual Studio Code">
 
-I am fully aware that this is not a complete tutorial covering everything that Graph Explorer and the Microsoft PowerShell SDK has to offer. Nevertheless, I hope that this provides you with a good starting point and I thank you for reading the article.
+I am fully aware that this is not a complete tutorial covering everything that Graph Explorer and the Microsoft PowerShell SDK has to offer. Nevertheless, I hope that this provides you with a good starting point and I thank you for reading the article.  
+
+---
+## *HAPPY GRAPHING!*
+---
