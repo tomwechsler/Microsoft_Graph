@@ -26,9 +26,9 @@ https://developer.microsoft.com/en-us/graph/graph-explorer
 
 <img src="/Learning_Tutorials/Images/ge_1.png" alt="The Graph Explorer">
 
-> Note: You can set up a free Microsoft 365 Developer Tenant directly from Graph Explorer (if not already done).
+> Note: You can set up a free Microsoft 365 Developer Tenant directly from Graph Explorer (if not already done - red arrow).
 
-**You can then log in.**  
+**You can then log in (see red square at the top of the picture).**  
 
 <img src="/Learning_Tutorials/Images/ge_2.png" alt="log in">
 
