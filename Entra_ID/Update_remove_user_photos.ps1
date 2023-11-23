@@ -1,7 +1,7 @@
 #Set the Execution Policy (Windows)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-#Install into the All-User Scope
+#Install Microsoft Graph PowerShell SDK
 Install-Module Microsoft.Graph -Force -Verbose -AllowClobber
 
 #Verify the Installation
