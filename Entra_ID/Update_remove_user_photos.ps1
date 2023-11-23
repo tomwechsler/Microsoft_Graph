@@ -18,7 +18,7 @@ Connect-MgGraph -Scopes "User.ReadWrite.All"
 #We check the permissions
 (Get-MgContext).Scopes
 
-#Get information about user
+#Get information about users
 Get-MgUser
 
 #Get information about user photos
@@ -29,3 +29,6 @@ Get-MgUserPhotoContent -UserId NestorW@63k57q.onmicrosoft.com -OutFile "C:\Downl
 
 #Remove user photos
 Remove-MgUserPhoto -UserId NestorW@63k57q.onmicrosoft.com
+
+#Disconnect from Microsoft Graph
+Disconnect-MgGraph
