@@ -15,13 +15,13 @@ $TenantID = "your Tenant ID"
 $Tenant = Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All"
 
 #Get a list of all devices
-Get-MgDevice
+Get-MgDevice -All
 
 #Get-Member to see the properties
 Get-MgDevice | Get-Member
 
 #Get a list of all devices and select the properties
-Get-MgDevice | Select-Object DisplayName, EnrollmentProfileName, ApproximateLastSignInDateTime, DeviceId
+Get-MgDevice -All | Select-Object DisplayName, EnrollmentProfileName, ApproximateLastSignInDateTime, DeviceId
 
 #Get Infos about a specific device
 Get-MgDeviceByDeviceId -DeviceId 88069fe5-367d-4cbd-be38-1c7b73740fcd | Select-Object *
