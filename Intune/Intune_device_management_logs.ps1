@@ -27,7 +27,7 @@ Get-MgDevice -All | Select-Object DisplayName, EnrollmentProfileName, Approximat
 Get-MgDeviceByDeviceId -DeviceId 88069fe5-367d-4cbd-be38-1c7b73740fcd | Select-Object *
 
 #Add more permissions to the connection
-$Tenant = Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementApps.ReadWrite.All"
+Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementApps.ReadWrite.All"
 
 #Get a list of the Audit events
 Get-MgDeviceManagementAuditEvent
@@ -66,7 +66,7 @@ $managedDeviceOverviews = Get-MgDeviceManagementManagedDeviceOverview
 Write-Output "Managed Device Overviews:" $managedDeviceOverviews
 
 #Add more permissions to the connection
-$Tenant = Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementApps.ReadWrite.All", "DeviceManagementRBAC.Read.All", "DeviceManagementRBAC.ReadWrite.All"
+Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementApps.ReadWrite.All", "DeviceManagementRBAC.Read.All", "DeviceManagementRBAC.ReadWrite.All"
 
 #Get all resource operations
 $resourceOperations = Get-MgDeviceManagementResourceOperation
