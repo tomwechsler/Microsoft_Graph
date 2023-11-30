@@ -12,7 +12,7 @@ get-command *get-mgdevice*
 $TenantID = "your Tenant ID"
 
 #Connect to the graph
-$Tenant = Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All"
+Connect-MgGraph -TenantId $TenantID -Scopes "AuditLog.Read.All","Directory.Read.All"
 
 #Get a list of all devices
 Get-MgDevice -All
