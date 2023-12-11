@@ -25,7 +25,7 @@ Get-MgUser
 Get-MgUserPhoto -UserId NestorW@63k57q.onmicrosoft.com
 
 #Add user photos
-Set-MgUserPhotoContent -UserId -UserId NestorW@63k57q.onmicrosoft.com -InFile "C:\Upload\NestorW.png"
+Set-MgUserPhotoContent -UserId NestorW@63k57q.onmicrosoft.com -InFile "C:\Upload\NestorW.png"
 
 #Download user photos
 Get-MgUserPhotoContent -UserId NestorW@63k57q.onmicrosoft.com -OutFile "C:\Download\NestorW.png"
