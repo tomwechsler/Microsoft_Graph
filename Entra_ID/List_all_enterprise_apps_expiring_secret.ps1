@@ -1,5 +1,5 @@
 #Install the Microsoft Graph PowerShell SDK module
-Install-Module Microsoft.Graph
+Install-Module Microsoft.Graph -Verbose -AllowClobber -Force
 
 #Authenticate with your Entra ID account
 Connect-MgGraph -Scope 'Application.ReadWrite.All'
