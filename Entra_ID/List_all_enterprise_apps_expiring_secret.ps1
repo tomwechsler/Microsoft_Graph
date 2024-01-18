@@ -38,8 +38,8 @@ foreach ($app in $appRegistrations) {
     }
 }
 
-#Output the array in a table format
-$output | Format-Table
+#Sort the output by the "Days Until Expiry" property and output in a table format
+$output | Sort-Object "Days Until Expiry" -Descending | Format-Table
 
 ################################
 #Export the output to a CSV file
