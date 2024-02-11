@@ -35,6 +35,8 @@ $sp = Get-MgServicePrincipal -ServicePrincipalId 46ddcaa9-ef22-42cb-b569-50df47c
 #Get MS Graph App role assignments using objectId of the Service Principal
 $assignments = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $sp.Id -All
 
+$assignments | Select-Object PrincipalDisplayName
+
 #Remove all users and groups assigned to the application
 $assignments | ForEach-Object {
     if ($_.PrincipalType -eq "User") {
@@ -53,6 +55,8 @@ $sp = Get-MgServicePrincipal -ServicePrincipalId 46ddcaa9-ef22-42cb-b569-50df47c
 
 #Get MS Graph App role assignments using objectId of the Service Principal
 $assignments = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $sp.Id -All | Where-Object {$_.PrincipalType -eq "User"}
+
+$assignments | Format-List
 
 #Revoke refresh token for all users assigned to the application
 $assignments | ForEach-Object {
